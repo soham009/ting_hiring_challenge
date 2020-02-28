@@ -1,0 +1,67 @@
+{% extends 'ting_hiring_challenge_app/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block headscript %}
+{% endblock headscript %}
+
+
+{% block content %}
+<h3>Players</h3>
+                <hr>
+<div>
+    <table id="test_table" class="display" style="width:  100%">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for player in player_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{player.player_name}}</td>
+                <td>{{player.player_gender}}</td>
+                <td>{{player.player_email}}</td>
+                <td>{{player.player_mobile_no}}</td>
+                <td>{{player.player_address}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+
+
+{% block extrascript %}
+{% endblock %}

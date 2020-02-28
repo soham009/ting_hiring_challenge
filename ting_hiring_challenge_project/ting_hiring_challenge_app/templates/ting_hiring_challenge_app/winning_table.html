@@ -1,0 +1,67 @@
+{% extends 'ting_hiring_challenge_app/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block headscript %}
+{% endblock headscript %}
+
+
+{% block content %}
+<h3>Winning</h3>
+                <hr>
+<div>
+    <table id="test_table" class="display" style="width:  100%">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Prize</th>
+                {% comment %} <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th> {% endcomment %}
+            </tr>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Prize</th>
+                {% comment %} <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th> {% endcomment %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for player in winners_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{player.player_name.player_name}}</td>
+                <td>{{player.player_winning}}</td>
+                {% comment %} <td>abc@gmail.com</td>
+                <td>9999999999</td>
+                <td>Mumbai</td> {% endcomment %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Sr. No</th>
+                <th>Player Name</th>
+                <th>Prize</th>
+                {% comment %} <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Address</th> {% endcomment %}
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+
+
+{% block extrascript %}
+{% endblock %}

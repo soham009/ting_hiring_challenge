@@ -1,0 +1,63 @@
+{% extends 'ting_hiring_challenge_app/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block headscript %}
+{% endblock headscript %}
+
+
+{% block content %}
+<h3>Admin User</h3>
+<hr>
+<div>
+    <table id="test_table" class="display" style="width:  100%">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <th>Sr. No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                {% if user.role == 1 %}
+                <td>SUPER ADMIN</td>
+                {% else %}
+                <td>ADMIN</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Sr. No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+
+
+{% block extrascript %}
+{% endblock %}

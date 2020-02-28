@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ting_hiring_challenge_app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'ting_hiring_challenge_app/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'ting_hiring_challenge_app/css/iofrm-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'ting_hiring_challenge_app/css/iofrm-theme5.css' %}">
+    
+    
+     <script src="{% static 'ting_hiring_challenge_app/js/jquery.min.js' %}"></script>
+    <script src="{% static 'ting_hiring_challenge_app/js/popper.min.js' %}"></script>
+    <script src="{% static 'ting_hiring_challenge_app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'ting_hiring_challenge_app/js/main.js' %}"></script>
+</head>
+
+<body style="background-color: #ed7b09 !important;">
+    <div class="row">
+        <div class="form-holder" style="background-color: #ed7b09 !important;">
+            <div class="form-content" style="background-color: #ed7b09 !important;">
+                <div class="form-items" style="margin-top: 5%">
+                    <h3>Login To Ting</h3>
+                    <p>Enter your username and password!</p>
+                    <div class="page-links">
+                        <a href="{% url 'ting_hiring_challenge_app:Login' %}" class="active">Login</a>
+                    </div>
+                    {% if error_message %}
+                        <p style='color:red'>{{ error_message }}</p>
+                        {% endif %}
+                    <form method="post" action="{% url 'ting_hiring_challenge_app:Login' %}">
+                        {% csrf_token %}
+                        <input class="form-control" type="text" name="username" placeholder="Username" required>
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                        <div class="form-button">
+                            <button id="submit" type="submit" class="ibtn" style="color:#ed7b09 ">Login</button> 
+<!--                            <a href="forget_password.html">Forget password?</a>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
